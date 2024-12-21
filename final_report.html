@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>241208과제입니다</title>
+<style>
+html, body { margin: 0; padding:0; height:100%; }
+header { width: 82.7%; height: 8.5%; float: right;
+         background: #FFF8E8;}
+aside { width: 17.3%; height: 95%; float: left;
+      background: #F7EED3;}
+section { width: 82.7%; height: 86.5%; float: left;
+          background: #FFF8E8;}
+footer { width:100%; height: 5%; clear: both; display: flex;
+        justify-content: center; 
+        align-items: center; 
+        background: #AAB396;}
+
+nav { clear : both; }
+
+header {
+    text-align : center;
+    color : #674636;
+}
+article { margin-left : 25px; margin-right : 25px; }
+div { margin-top: 26px; margin-left: 26px; margin-right: 30px; }
+hr {
+    margin-left : 10px; margin-right: 10px; 
+    background : lightgray; opacity : 50%;
+    height : 0.5px;
+    }
+
+header.title { font-size: 60px; text-align: center; margin-top: 5px; }
+p { font-size: 14px; margin-left : 15px; }
+footer{
+    font-size: 15px;
+    text-align : center;
+}
+
+article ul {
+    font-size : 13px;
+}
+
+nav ul {
+  list-style-type: none; 
+  padding: 0; 
+  margin: 0; 
+}
+
+nav ul li {
+  padding: 8px;
+  margin-left: 26px; margin-right: 30px; margin-bottom: 6px; 
+  background-color: #AAB396; 
+  text-align: center; 
+  width: 180px;
+}
+
+nav ul li:hover {background-color: #737d5d;} 
+
+nav ul li a {
+  text-decoration: none; 
+  color: white; 
+  display: block;
+  font-weight: bold;
+  font-size : 12px;
+}
+
+#clock {
+  color: white;
+  font-size: 15px;
+}
+td { font-size:14px;}
+</style>
+<script>
+let text = "이 페이지에 적용된 event:\n";
+text += "1. page load 시 alert 출력\n"
+text += "2. 사진 누르면 confirm 창이 나옵니다.\n"
+text += "3. 맨 아래에는 현재 시간이 있어요.\n"
+text += "4. 노래 추천에서 라디오버튼을 눌러보세요\n"
+
+alert(text);
+
+function query(){
+    let ret = confirm("확인을 누르면 제 사진이 나옵니다..");
+    return ret;
+}
+
+function updateClock() {
+  let clockElement = document.getElementById('clock');
+  let now = new Date();
+
+  let hours = String(now.getHours()).padStart(2, '0');
+  let minutes = String(now.getMinutes()).padStart(2, '0');
+  let seconds = String(now.getSeconds()).padStart(2, '0');
+
+  clockElement.textContent = `현재 시간 : ${hours}:${minutes}:${seconds}`;
+}
+
+window.onload = () => {
+  updateClock();
+  setInterval(updateClock, 1000);
+};
+
+
+</script>
+</head>
+
+<body>
+    <header>
+    <p style="font-size: 20px;"><b>JONGHO'S INTRODUCE PAGE</b></p>
+    <hr>
+    </header>
+    
+    <aside>
+    <div>
+        <img src="mypic.jpg"
+        alt="내사진" height="260" weight="220">
+        <p style="font-size: 24.5px; font-weight: bold; text-align: center;
+         margin-right: 15px; margin-top : 2px; margin-bottom : 2px;">KIM-JONGHO</p> 
+        <p style="font-size: 13px; text-align: center; 
+        margin-right: 15px; margin-top : 2px; margin-bottom : 2px;">Student Number: 2406004</p>
+        <a href="https://instagram.com/97124__jh" target="_blank" >
+	                <img src="insta.jpg" height="20px" width="20px" alt="인스타그램" 
+                    style="margin:0 auto; display:block; margin-top : 10px; margin-bottom : 12px;">
+        </a>
+    </div>
+    <hr>
+    <nav>
+        <ul>
+        <li><a href="#introduce">자기소개</a></li>
+        <li><a href="#department">학과소개</a></li>
+        <li><a href="#timetable">수강과목</a></li>
+        </ul>
+        <hr>
+        <ul>
+        <li><a href="mypic.html" target="_blank" onclick="return query()">사진</a></li>
+        <li><a href="recommend.html" target="_blank">노래추천</a></li>
+        </ul>
+        <hr>
+        <ul>
+        <li><a href="signup.html" target="_blank">회원가입</a></li>
+        </ul>
+    </ul>
+    </nav>
+    </aside>
+    <section>
+    <article id="introduce">
+        <h3>자기소개</h3>
+        <p>안녕하세요. 미래인재학부에 재학중인 김종호 입니다. 간단한 저의 소개입니다.
+            <ul>
+            <li>업무: 발전소 제어프로그램 관리 및 설비보전</li>
+            <li>거주지: 인천광역시</li>
+            <li>취미: 음악감상, 악기연주, 맛집탐방</li>
+            <li>좋아하는 음식: 치킨, 삼겹살, 라멘, 아이스크림</li>
+            </ul>
+        </p>
+    </article>
+    <hr>
+    <article id="department">
+        <h3>학과소개</h3>
+        <p>미래인재학부는 AI와 소프트웨어 교육을 바탕으로 다른 전공과 융합하여 다양한 분야의 진로를 탐색할 수 있는 학과입니다. 
+            데이터사이언스 및 알고리즘, 머신러닝 등 다양한 산업 분야에서 활용되는 기술을 습득하여 신산업, 신기술 분야의 문제 해결 능력을 가질 수 있습니다.
+         </p>
+         <a href="https://futureplus.hansung.ac.kr/ko/department/future" target="_blank">한성대학교 미래인재학부 공식사이트</a>
+    </article>
+<hr>
+    <article id="timetable">
+        <table border="1">
+            <caption><h3>수강과목</h3></caption>
+            <thead>
+                <tr><th>과목</th><th>시간</th></tr>
+            </thead>
+            <tfoot>
+                <tr><th>총 7과목</th><th>09:00 ~ 17:00</th></tr>
+            </tfoot>
+            <tbody>
+                <tr><td>데이터사이언스</td><td>09:00 ~ 10:00</td></tr>
+                <tr><td>AI 기초 수학</td><td>10:00 ~ 11:00</td></tr>
+                <tr><td>대학생활 길라잡이 2</td><td>11:00 ~ 12:00</td></tr>
+                <tr><td>C프로그래밍</td><td>13:00 ~ 15:00</td></tr>
+                <tr><td>웹프로그래밍</td><td>15:00 ~ 16:00</td></tr>
+                <tr><td>AI SW</td><td>16:00 ~ 17:00</td></tr>
+                <tr><td>컴퓨터구조</td><td>17:00 ~ 19:00</td></tr>
+            </tbody>
+            </table>
+
+    </article>
+   
+    </section>
+    <footer>
+        <p id="clock"></p>
+    </footer>
+</body>
+</html>

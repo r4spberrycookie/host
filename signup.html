@@ -4,9 +4,29 @@
 <meta charset="utf-8">
 <title>회원가입</title>
 </head>
+<style>
+html, body { margin: 0; padding:0; height:100%; }
+header { width: 100%; height: 10%;
+    background: #FFF8E8;
+    text-align : center;
+    color : #674636;
+    font-size: 24px;
+}
+section { width: 100%; height: 90%;
+    background: #FFF8E8;
+}
+
+hr {
+    margin-left : 10px; margin-right: 10px; 
+    background : lightgray; opacity : 50%;
+    height : 0.5px;
+}
+</style>
+
 <body>
-<h3>회원가입</h3>
-<hr>
+<header><b>Sign Up</b><hr></header>
+
+<section>
 <form name="fo" method="get">
     사용자 ID : <input type="text" size="15" value=""><br>
     비밀 번호 : <input type="password" size="15" value=""><br>
@@ -14,8 +34,9 @@
             남자
             <input type="radio" name="성별" value="1">
             여자<br>
-    구경후기 : <textarea clos="20" rows="5">구경후기</textarea>
+    방명록 : <textarea clos="20" rows="5">구경후기를 남겨주세요.</textarea>
     <input type="submit" value="완료">
 </form>
+</setcion>
 </body>
 </html>
